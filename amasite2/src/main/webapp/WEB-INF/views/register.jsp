@@ -103,7 +103,7 @@ span.psw {
 <%-- <jsp:include page="index.jsp" /> --%>
 
 
-<form action="register">
+<form action="success">
 
   <div class="container-fluid">
   
@@ -131,7 +131,7 @@ span.psw {
 <br/>
 <br/>
 <br/>
-<%-- <jsp:include page="footer.jsp" /> --%>
+<jsp:include page="footer.jsp" />
 
 </body>
 </html>
