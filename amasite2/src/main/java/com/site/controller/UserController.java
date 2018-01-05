@@ -3,12 +3,25 @@ package com.site.controller;
 import javax.servlet.http.HttpServletRequest;
 
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-//import javax.servlet.http.*
+
+
+import com.testingtable.model.User;
+import com.testingtable.dao.Userdao;
+import com.testingtable.model.Category;
+
+import com.testingtable.dao.Categorydao;
+import com.testingtable.model.Suplier;
+import com.testingtable.dao.Suplierdao;
+import com.testingtable.model.Product;
+import com.testingtable.dao.Productdao;
+
 @Controller
 public class UserController {
 	
@@ -26,46 +39,130 @@ public class UserController {
 		return "register";
 	}
 
-	/*@Autowired
+	
+	@Autowired
 	Userdao userDao;
+	
 	public void Userdao(Userdao userDao)
 	{
 		this.userDao=userDao;
-	}*/
-	@RequestMapping(value="/success",method=RequestMethod.GET)
-	//public ModelAndView success(HttpServletRequest request)
-	public String success()
-	{
-		/*ModelAndView mv=null;*/
-		 /*  try{
-	       String mail=request.getParameter("mail");
-	       String name=request.getParameter("name");
-			String add=request.getParameter("address");
-			int age=Integer.parseInt(request.getParameter("age"));
-			String phone=request.getParameter("phone");
-			String pass=request.getParameter("passwd");
-			System.out.println("haoiii"+name+"mail"+"add"+add+"age"+age+"phone"+phone+"pass"+pass);
-			User u=new User();
-			u.setU_mail(mail);
-			u.setAge(age);
-			u.setU_password(pass);
-			u.setPhone(phone);
-			u.setRole("role");
-			userDao.persist(u);
-			System.out.println("Mother Earth");
-			
-			 mv = new ModelAndView("success");
-		   }catch(Exception ex)
-		   {
-			   mv=new ModelAndView("ErrorPage","error",ex);
-		   }finally
-		   {
-			return mv;
-		   }
-		*/
-		System.out.println("inside controller");
-		return "success";
 	}
+	@RequestMapping(value="/success",method=RequestMethod.GET)
+	public ModelAndView success(HttpServletRequest request)
+
+	{
+	 System.out.println("inside home controller");
+	   ModelAndView mv=null;
+	   try{
+		   int id=Integer.parseInt(request.getParameter("id"));
+		  
+       String name=request.getParameter("name");
+   	String password=request.getParameter("password");
+	
+       String email=request.getParameter("email");
+       String rol=request.getParameter("rol");
+		String adress=request.getParameter("adress");
+		//int age=Integer.parseInt(request.getParameter("age"));
+		String phone=request.getParameter("phone");
+	System.out.println("haoiii"+name+" "+email+"adress"+adress+"phone"+phone+"password"+password);
+		User u=new User();
+		u.setId(id);
+		u.setName(name);
+		u.setPassword(password);
+		u.setEmail(email);
+		u.setRol(rol);
+		u.setAdress(adress);
+		u.setPhone(phone);
+		userDao.persist(u);
+		System.out.println("Mother Earth");
+		
+		 mv = new ModelAndView("success");
+	   }
+	   catch(Exception ex)
+	   {
+		   System.out.println(ex.getMessage());
+		   mv=new ModelAndView("error","error",ex);
+	   }
+	   finally
+	   {
+		return mv;
+	   }
+	}
+@Autowired
+    Suplierdao sdao;
+public void Suplierdao(Suplierdao sdao)
+{
+   this.sdao=sdao;	
+}
+@RequestMapping(value="/success2",method=RequestMethod.GET)
+public ModelAndView success2(HttpServletRequest request)
+
+{
+ System.out.println("inside home controller under Suplier");
+   ModelAndView mv=null;
+   try{
+	   int Sid=Integer.parseInt(request.getParameter("Sid"));
+	  
+   String Sname=request.getParameter("Sname");
+
+	System.out.println("hello" +Sid+" "+Sname);
+	Suplier s=new Suplier();
+    s.setS_id(Sid);
+    s.setS_name(Sname);
+    sdao.persist(s);
+	System.out.println("Mother Earth");
+	
+	 mv = new ModelAndView("success");
+  }
+  catch(Exception ex)
+  {
+	   System.out.println(ex.getMessage());
+	   mv=new ModelAndView("error","error",ex);
+  }
+  finally
+  {
+	return mv;
+  }
+}
+@Autowired
+Categorydao cdao;
+public void Categorydao(Categorydao cdao)
+{
+   this.cdao=cdao;	
+}
+@RequestMapping(value="/success1",method=RequestMethod.GET)
+public ModelAndView success1(HttpServletRequest request)
+
+{
+ System.out.println("inside home controller under Category");
+   ModelAndView mv=null;
+   try{
+	   int Cid=Integer.parseInt(request.getParameter("Cid"));
+	  
+   String Cname=request.getParameter("Cname");
+	String Cdesc=request.getParameter("Cdesc");
+	System.out.println("hello" +Cid+" "+Cname+" "+Cdesc);
+	 Category c=new Category();
+   c.setC_id(Cid);
+   c.setC_name(Cname);
+   c.setC_desc(Cdesc);
+   cdao.persist(c);
+       
+
+	System.out.println("Mother Earth");
+	
+	 mv = new ModelAndView("success");
+  }
+  catch(Exception ex)
+  {
+	   System.out.println(ex.getMessage());
+	   mv=new ModelAndView("error","error",ex);
+  }
+  finally
+  {
+	return mv;
+  }
+}
 	
 	@RequestMapping(value="/admin",method=RequestMethod.GET)
 	public String signin2()
@@ -73,23 +170,84 @@ public class UserController {
 		System.out.println("inside controller");
 		return "admin";
 	}
-	/*@RequestMapping(value="/Suplier LIst",method=RequestMethod.GET)
-	public String signin()
+	@RequestMapping(value="/Suplieradd",method=RequestMethod.GET)
+	public String Suplieradd()
 	{
 		System.out.println("inside controller");
-		return "Suplier List";
-	}}
-*/
-} 
-/*	
-	@RequestMapping(value="/registrer")
-	public ModelAndView reg(HttpServletRequest request)
+		return "Suplieradd";
+	}
+
+
+	@RequestMapping(value="/Categoryadd",method=RequestMethod.GET)
+	public String Categoryadd()
 	{
-        
+		System.out.println("inside Category controller");
+		return "Categoryadd";
+
+
+
+} 
+
+	@Autowired
+	Productdao pdao;
+	public void Productdao(Productdao pdao)
+	{
+		this.pdao=pdao;
 		
-		ModelAndView mv = new ModelAndView("registrer");*/
+	}
+	
+	@RequestMapping(value="/success3",method=RequestMethod.GET)
+	public ModelAndView success3(HttpServletRequest request)
+
+	{
+	 System.out.println("inside Product homecontroller");
+	   ModelAndView mv=null;
+	   try{
+		   int Pid=Integer.parseInt(request.getParameter("Pid"));
+		  
+       String Pname=request.getParameter("Pname");
+   	String Pbrand=request.getParameter("Pbrand");
+	
+       String Pdesc=request.getParameter("Pdesc");
+     /*  String Pprice=request.getParameter("Pprice");*/
+       int Pprice=Integer.parseInt(request.getParameter("Pprice"));
+       System.out.println("hello"+Pid+" "+Pname+" "+Pbrand+" "+Pdesc+" "+Pprice);
+		Product p=new Product();
 		
-		/*return mv;
-	}*/
+		p.setP_id(Pid);
+		p.setP_name(Pname);
+		p.setP_brand(Pbrand);
+		p.setP_description(Pdesc);
+		p.setP_price(Pprice);
+		pdao.persist(p);
+		
+		System.out.println("Mother Earth");
+		
+		 mv = new ModelAndView("success");
+	   }
+	   catch(Exception ex)
+	   {
+		   System.out.println(ex.getMessage());
+		   mv=new ModelAndView("error","error",ex);
+	   }
+	   finally
+	   {
+		return mv;
+	   }
+	}
+
+       
+       
+       
+       
+
+	@RequestMapping(value="/Productadd",method=RequestMethod.GET)
+	public String Productadd()
+	{
+		System.out.println("inside productadd controller");
+		return "Productadd";
+} 
+
+}
 	
 

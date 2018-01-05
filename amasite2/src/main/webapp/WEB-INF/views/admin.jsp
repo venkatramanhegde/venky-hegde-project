@@ -88,18 +88,14 @@ img {vertical-align: middle;}
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-     <!--  <a class="navbar-brand" href="#">WebSiteName</a> -->
+   
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Suplier</a></li>
-    <!--   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">samsung</a></li>
-          <li><a href="">lenovo</a></li>
-          <li><a href="#">red me</a></li>
-           <li><a href="#">Apple</a></li> -->
-           <li class="active"><a href="#">Category</a></li>
-           <li class="active"><a href="#">Product</a></li>
+      <li class="active"><a href="Suplieradd">Suplier</a></li>
+    
+           
+           <li class="active"><a href="Categoryadd">Category</a></li>
+           <li class="active"><a href="Productadd">Product</a></li>
         </ul>
 
 

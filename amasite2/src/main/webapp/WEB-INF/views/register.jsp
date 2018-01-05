@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<!-- <title>Insert title here</title> -->
 <title>REGISTRAION PAGE</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +74,7 @@ button:hover {
 
 .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 12px 0 12px 0;
 }
 
 
@@ -84,7 +84,7 @@ button:hover {
 
 span.psw {
     float: right;
-    padding-top: 16px;
+    padding-top: 8px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -109,20 +109,29 @@ span.psw {
   
   
   
- <label><b> Id </b></label>
- <input> type="number"  placeholder="Enter Id" Id="Id" required="required">
-    <label><b>Name</b></label>
+
+
+ <label><b> id </b></label>
+  <input type="number" placeholder="Enter id" name="id" required="required">
+<!--  <input> type="number"  placeholder="Enter Id" Id="Id" required="required"> -->
+    <label><b>name</b></label>
     <input type="text" placeholder="Enter Name" name="name" required="required">
-     <label><b>age</b></label>
-    <input type="number" placeholder="Enter Age" name="age"  pattern="[18-99]" title="enter age between 18-99" required="required" >
-     <label><b>email</b></label>
-    <input type="email" placeholder="Enter email" name="mail" required="required" >
-	 <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="passwd" maxlength="10" title="enter valid password" required="required" >
-     <label><b>Phone Number</b></label>
-      <input type="number" placeholder="Enter Phone-Number" name="phone" maxlength="16" pattern="/^+91(7\d|8\d|9\d)\d{9}$/" title="enter valid number" required="required">
-      <label><b>Address</b></label><br>
-    <textarea rows="4" cols="112" name="address"></textarea>
+     <label><b>password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" maxlength="10" title="enter valid password" required="required" >
+      <label><b>email</b></label>
+    <input type="email" placeholder="Enter email" name="email" required="required" >
+    
+  <!--    <label><b>age</b></label>
+    <input type="number" placeholder="Enter Age" age="age"  pattern="[18-99]" title="enter age between 18-99" required="required" >
+    -->
+	  <label><b> rol </b></label>
+  <input type="text" placeholder="Enter roll number" name="rol" required="required">
+ < label><b>adress</b></label><br>
+    <textarea rows="4" cols="112" name="adress"></textarea>
+  	
+     <label><b>phone</b></label>
+      <input type="text" placeholder="Enter Phone-Number" name="phone" maxlength="16" pattern="/^+91(7\d|8\d|9\d)\d{9}$/" title="enter valid number" required="required">
+      
      <button type="submit">Login</button>
       
   </div>
