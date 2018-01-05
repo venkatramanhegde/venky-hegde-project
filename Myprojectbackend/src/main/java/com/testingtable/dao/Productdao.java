@@ -7,7 +7,7 @@ import com.testingtable.model.Product;
 public interface Productdao {
 public void persist(Product p);
 	
-	public void update(Product p);
+	/*public void update(Product p);
 	
 	public Product  findById(int id);
 	
@@ -17,6 +17,6 @@ public void persist(Product p);
 	
 	public void deleteAll();
    
-    public List<Product> getFilterProducts(int C_ID);
+    public List<Product> getFilterProducts(int C_ID);*/
     
 }

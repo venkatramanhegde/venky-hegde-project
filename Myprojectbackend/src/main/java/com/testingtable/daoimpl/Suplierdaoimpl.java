@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.testingtable.dao.Suplierdao;
-import com.testingtable.model.Supplier;
+import com.testingtable.model.Suplier;
 
 @Repository
 public class Suplierdaoimpl implements Suplierdao{
@@ -21,7 +21,7 @@ public class Suplierdaoimpl implements Suplierdao{
 	}
 	
 	
-	public void persist(Supplier sup) {
+	public void persist(Suplier sup) {
 		
 		Session f=sessionFactory.openSession();
 		f.beginTransaction();
@@ -32,8 +32,9 @@ public class Suplierdaoimpl implements Suplierdao{
 		// TODO Auto-generated method stub
 		
 	}
+}
 
-	public void update(Supplier s) {
+	/*public void update(Supplier s) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -73,3 +74,4 @@ public class Suplierdaoimpl implements Suplierdao{
 
 
 
+*/

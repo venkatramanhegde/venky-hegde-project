@@ -13,6 +13,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.testingtable.model.Category;
+import com.testingtable.model.Product;
+import com.testingtable.model.Suplier;
 import com.testingtable.model.User;
 
 
@@ -31,11 +34,11 @@ public class configfile
 	        
 	        sessionBuilder.addProperties(getHibernateProperties());
 	        sessionBuilder.addAnnotatedClass(User.class);
-	        /*sessionBuilder.addAnnotatedClass(Category.class);
-	        sessionBuilder.addAnnotatedClass(Supplier.class);
-	        sessionBuilder.addAnnotatedClass(User.class);
-	        sessionBuilder.addAnnotatedClass(Orders.class);
-	        sessionBuilder.addAnnotatedClass(Cart.class);*/
+	        sessionBuilder.addAnnotatedClass(Category.class);
+	        sessionBuilder.addAnnotatedClass(Suplier.class);
+	        sessionBuilder.addAnnotatedClass(Product.class);
+	        //sessionBuilder.addAnnotatedClass(Orders.class);
+	       // sessionBuilder.addAnnotatedClass(Cart.class);*/
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

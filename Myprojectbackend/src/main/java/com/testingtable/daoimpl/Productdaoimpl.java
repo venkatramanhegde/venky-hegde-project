@@ -30,7 +30,7 @@ public class Productdaoimpl implements Productdao {
 		
 		}
 
-	public void update(Product p) 
+/*	public void update(Product p) 
 	{
 		Session s=sessionFactory.openSession();
 		s.beginTransaction();
@@ -80,7 +80,7 @@ public class Productdaoimpl implements Productdao {
 		s.close();
 		return results;
 	}
-	
+	*/
 		
 		
 }

@@ -1,5 +1,6 @@
 package com.testingtable.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Suplier")
-public class Supplier {
+public class Suplier implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -21,7 +22,7 @@ public class Supplier {
 	@Column(name="S_NAME")
 	private String s_name;
 	
-	@OneToMany(targetEntity=Product.class,mappedBy="supplier",cascade = CascadeType.ALL)
+	@OneToMany(targetEntity=Product.class,mappedBy="suplier",cascade = CascadeType.ALL)
 	private Set<Product> product;
 
 	public Set<Product> getProduct() {
@@ -32,12 +33,12 @@ public class Supplier {
 		this.product = product;
 	}
 	
-	public Supplier(){
+	public Suplier(){
 		super();
 		
 			}
 	
-public Supplier(int s_id, String s_name, Set<Product> product) {
+public Suplier(int s_id, String s_name, Set<Product> product) {
 	super();
 	this.s_id = s_id;
 	this.s_name = s_name;
@@ -45,7 +46,7 @@ public Supplier(int s_id, String s_name, Set<Product> product) {
 }
 
 
-public Supplier(int s_id, String s_name) {
+public Suplier(int s_id, String s_name) {
 	super();
 	this.s_id = s_id;
 	this.s_name = s_name;

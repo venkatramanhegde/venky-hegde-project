@@ -1,5 +1,7 @@
 package com.testingtable.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Product")
-public class Product {
+public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,6 +20,7 @@ public class Product {
 	int p_id;
 	@Column(name="name")
 	private String p_name;
+	
 	@Column(name="brand")
 	private String p_brand;
 	@Column(name="desc") 
@@ -30,14 +33,15 @@ public class Product {
 	Category category;
 	@ManyToOne
 	@JoinColumn(name="S_ID")
-	Supplier supplier;
-	@Column(name="image") private String p_image;
+	Suplier suplier;
+	@Column(name="image") 
+	private String p_image;
 	public Product() {
 		super();
 	}
 
 	public Product(int p_id,String p_name, String p_brand,String p_description, int p_price, int p_quantity,
-			Category category, Supplier supplier, String p_image) {
+			Category category, Suplier suplier, String p_image) {
 		super();
 		this.p_id = p_id;
 		this.p_brand = p_brand;
@@ -46,7 +50,7 @@ public class Product {
 		this.p_price = p_price;
 		//this.p_quantity = p_quantity;
 		this.category = category;
-		this.supplier = supplier;
+		this.suplier = suplier;
 		this.p_image = p_image;
 	}
 	
@@ -92,11 +96,11 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public Supplier getSupplier() {
-		return supplier;
+	public Suplier getSupplier() {
+		return suplier;
 	}
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
+	public void setSupplier(Suplier suplier) {
+		this.suplier = suplier;
 	}
 	public String getP_image() {
 		return p_image;
