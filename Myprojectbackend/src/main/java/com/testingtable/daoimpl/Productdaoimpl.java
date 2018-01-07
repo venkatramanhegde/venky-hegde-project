@@ -29,6 +29,18 @@ public class Productdaoimpl implements Productdao {
 		s.close();
 		
 		}
+	public List<Product> getAllProducts() {
+		
+		Session sf =sessionFactory.openSession();
+		sf.beginTransaction();
+		Query query = sf.createQuery("from Product");
+		List<Product> list2=query.list();
+		System.out.println(list2);
+		System.out.println(list2);
+		sf.getTransaction().commit();
+			return list2;
+		}
+	
 
 /*	public void update(Product p) 
 	{
@@ -56,17 +68,7 @@ public class Productdaoimpl implements Productdao {
 		s.close();sessionFactory.openSession().delete(p);
 	}
 
-	public List<Product> getAllProducts() {
-		
-		Session sf =sessionFactory.openSession();
-		sf.beginTransaction();
-		Query query = sf.createQuery("from Product");
-		List<Product> list2=query.list();
-		System.out.println(list2);
-		System.out.println(list2);
-		sf.getTransaction().commit();
-			return list2;
-		}
+
 
 	public void deleteAll() {
 		// TODO Auto-generated method stub

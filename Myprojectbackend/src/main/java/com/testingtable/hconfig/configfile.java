@@ -38,7 +38,7 @@ public class configfile
 	        sessionBuilder.addAnnotatedClass(Suplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
 	        //sessionBuilder.addAnnotatedClass(Orders.class);
-	       // sessionBuilder.addAnnotatedClass(Cart.class);*/
+	       sessionBuilder.addAnnotatedClass(cart.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

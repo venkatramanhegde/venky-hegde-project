@@ -1,6 +1,7 @@
 package com.testingtable.daoimpl;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -28,11 +29,25 @@ public class Suplierdaoimpl implements Suplierdao{
 		f.save(sup);
 		f.getTransaction().commit();
 		f.close();
-		
+	}
 		// TODO Auto-generated method stub
+		public List<Suplier> getAllSupliers() {
+			// TODO Auto-generated method stub
+			
+			Session sf =sessionFactory.openSession();
+			sf.beginTransaction();
+			Query query = sf.createQuery("from Suplier");
+			List<Suplier> list1=query.list();
+			System.out.println(list1);
+			sf.getTransaction().commit();
+				return list1;
+			}
+			
+		
+		
 		
 	}
-}
+
 
 	/*public void update(Supplier s) {
 		// TODO Auto-generated method stub

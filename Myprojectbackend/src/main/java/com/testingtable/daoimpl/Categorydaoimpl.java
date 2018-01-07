@@ -28,8 +28,24 @@ public void persist(Category c)
 	s.save(c);
 	s.getTransaction().commit();
 	s.close();
-	
-	
+}
+	public List<Category> getAllCategories() {
+		// TODO Auto-generated method stub
+		
+	Session sf =sessionFactory.openSession();
+	sf.beginTransaction();
+	Query query = sf.createQuery("from Category");
+	List<Category> list=query.list();
+	System.out.println(list);
+	sf.getTransaction().commit();
+		return list;
+	}
+
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	// TODO Auto-generated method stub
 		}
 /*
@@ -49,17 +65,7 @@ public void delete(Category c) {
 	
 }
 
-public List<Category> getAllCategories() {
-	// TODO Auto-generated method stub
-	
-Session sf =sessionFactory.openSession();
-sf.beginTransaction();
-Query query = sf.createQuery("from Category");
-List<Category> list=query.list();
-System.out.println(list);
-sf.getTransaction().commit();
-	return list;
-}
+
 
 public void deleteAll() {
 	// TODO Auto-generated method stub
@@ -67,4 +73,4 @@ public void deleteAll() {
 }
 
 */
-}
+

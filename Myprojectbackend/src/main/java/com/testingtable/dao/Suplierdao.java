@@ -6,6 +6,7 @@ import com.testingtable.model.Suplier;
 
 public interface Suplierdao {
 	 public void persist(Suplier s);
+	 public List<Suplier> getAllSupliers();
 		
 	/*	public void update(Supplier s);
 		

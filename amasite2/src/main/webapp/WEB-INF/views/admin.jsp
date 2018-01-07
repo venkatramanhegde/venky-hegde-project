@@ -91,11 +91,16 @@ img {vertical-align: middle;}
    
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="Suplieradd">Suplier</a></li>
+      <li class="active"><a href="#">Suplier</a></li>
     
            
-           <li class="active"><a href="Categoryadd">Category</a></li>
-           <li class="active"><a href="Productadd">Product</a></li>
+           <li class="active"><a href="#">Category</a></li>
+           <li class="active"><a href="#">Product</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
+        <ul class="dropdown-menu">
+        <li><a href="Productlist">product list</a></li>
+          <li><a href="categorylist">category list</a></li>
+          <li><a href="Suplierlist">supplier list</a></li>
         </ul>
 
 

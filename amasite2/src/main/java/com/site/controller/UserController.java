@@ -29,6 +29,7 @@ public class UserController {
 	public String index()
 	{
 		System.out.println("inside controller");
+		
 		return "index";
 	}
 
@@ -130,8 +131,10 @@ public void Categorydao(Categorydao cdao)
 {
    this.cdao=cdao;	
 }
+
 @RequestMapping(value="/success1",method=RequestMethod.GET)
 public ModelAndView success1(HttpServletRequest request)
+
 
 {
  System.out.println("inside home controller under Category");
@@ -162,6 +165,7 @@ public ModelAndView success1(HttpServletRequest request)
   {
 	return mv;
   }
+   
 }
 	
 	@RequestMapping(value="/admin",method=RequestMethod.GET)
@@ -178,11 +182,11 @@ public ModelAndView success1(HttpServletRequest request)
 	}
 
 
-	@RequestMapping(value="/Categoryadd",method=RequestMethod.GET)
+	@RequestMapping(value="/categoryadd",method=RequestMethod.GET)
 	public String Categoryadd()
 	{
 		System.out.println("inside Category controller");
-		return "Categoryadd";
+		return "categoryadd";
 
 
 
@@ -204,7 +208,7 @@ public ModelAndView success1(HttpServletRequest request)
 	   ModelAndView mv=null;
 	   try{
 		   int Pid=Integer.parseInt(request.getParameter("Pid"));
-		  
+		   
        String Pname=request.getParameter("Pname");
    	String Pbrand=request.getParameter("Pbrand");
 	
@@ -239,15 +243,15 @@ public ModelAndView success1(HttpServletRequest request)
        
        
        
-       
-
-	@RequestMapping(value="/Productadd",method=RequestMethod.GET)
+   
+	@RequestMapping(value="/productadd",method=RequestMethod.GET)
 	public String Productadd()
 	{
 		System.out.println("inside productadd controller");
-		return "Productadd";
+		return "productadd";
 } 
 
+	
 }
 	
 

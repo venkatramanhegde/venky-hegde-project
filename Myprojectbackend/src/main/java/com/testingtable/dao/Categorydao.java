@@ -6,6 +6,7 @@ import com.testingtable.model.Category;
 
 public interface Categorydao {
 
+	public List<Category> getAllCategories();
 	 public void persist(Category c);
 		
 		/*     public void update(Category c);

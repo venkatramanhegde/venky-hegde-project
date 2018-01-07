@@ -6,6 +6,9 @@ import com.testingtable.model.Product;
 
 public interface Productdao {
 public void persist(Product p);
+
+public List<Product> getAllProducts();
+
 	
 	/*public void update(Product p);
 	
@@ -13,7 +16,7 @@ public void persist(Product p);
 	
 	public void delete(Product p);
 	
-	public List<Product> getAllProducts();
+	
 	
 	public void deleteAll();
    
