@@ -240,6 +240,7 @@ public ModelAndView success1(HttpServletRequest request)
 		p.setP_description(Pdesc);
 		p.setP_price(Pprice);
 		p.setStock(stock);
+		
 		pdao.persist(p);
 		
 		System.out.println("Mother Earth");

@@ -73,7 +73,7 @@ xmlns:th="http://www.thymeleaf.org">
                            <td>${p.p_description} </td>
                            <td>${p.p_price} </td>
                            <td> ${p.stock} </td>
-
+                            <td>${p.image} </td>
                      <%--  <td>${p. p_price}</td> --%>
                            <td>${p.category.c_name}</td>     
                            <td>${p.supplier.s_name}</td>         
