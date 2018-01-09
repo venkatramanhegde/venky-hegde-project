@@ -54,7 +54,9 @@ xmlns:th="http://www.thymeleaf.org">
                        <th>Name</th>
                        <th> Brand </th>
                        <th> description</th>
-                       <th>  price </th>                                                                                              
+                       <th>  price </th>    
+                       <th> stock </th>
+                       <th> image </th>                                                                                          
                    </tr> 
                  </thead>
                  <tbody>
@@ -70,15 +72,17 @@ xmlns:th="http://www.thymeleaf.org">
                            <td>${p.p_brand}</td>
                            <td>${p.p_description} </td>
                            <td>${p.p_price} </td>
-                           <%-- <td>${p. p_price}</td>
+                           <td> ${p.stock} </td>
+
+                     <%--  <td>${p. p_price}</td> --%>
                            <td>${p.category.c_name}</td>     
                            <td>${p.supplier.s_name}</td>         
                             
-                           <td><img src="./resources/uploads/products/${p.pImg}"  class="img-rounded" alt="${p.p_name }" width="75px" height="50px"/></td>         
-                           <tr>  --%>  
-                           </tr> 
+                         <%--   <td><img src=""src/main/webapp/images/lenovoslim.jpg"/${p.pImg}"  class="img-rounded" alt="${p.p_name }" width="75px" height="50px"/></td> --%>         
+                             
+                           </tr>  
                                  
-                     <tr> </c:forEach>
+                   <tr>   </c:forEach>  
                        </tbody>
                </table>
            

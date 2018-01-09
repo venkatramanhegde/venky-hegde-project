@@ -35,7 +35,8 @@ public class AdminController {
 model.put("lista", list);
 model.put("hi","hi");
 	     return new ModelAndView("categorylist",model);
-	    		}
+	      		
+	}
 	
 
 @Autowired

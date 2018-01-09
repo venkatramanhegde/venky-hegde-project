@@ -1,5 +1,7 @@
 package com.site.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -24,30 +26,46 @@ import com.testingtable.dao.Productdao;
 
 @Controller
 public class UserController {
-	
+
+	@Autowired
+    Suplierdao sdao;
+public void Suplierdao(Suplierdao sdao)
+{
+   this.sdao=sdao;	
+}
+@Autowired
+Userdao userDao;
+
+public void Userdao(Userdao userDao)
+{
+	this.userDao=userDao;
+}
+
+@Autowired
+Categorydao cdao;
+public void Categorydao(Categorydao cdao)
+{
+   this.cdao=cdao;	
+}
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String index()
+	public ModelAndView index()
 	{
 		System.out.println("inside controller");
-		
-		return "index";
+		List<Category> clist=cdao.getAllCategories();
+		ModelAndView m=new ModelAndView("index");
+		m.addObject("clist",clist);
+		return m;
 	}
 
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String signin1()
 	{
-		System.out.println("inside controller");
+		System.out.println("inside controller"); 
 		return "register";
 	}
 
 	
-	@Autowired
-	Userdao userDao;
 	
-	public void Userdao(Userdao userDao)
-	{
-		this.userDao=userDao;
-	}
 	@RequestMapping(value="/success",method=RequestMethod.GET)
 	public ModelAndView success(HttpServletRequest request)
 
@@ -89,12 +107,7 @@ public class UserController {
 		return mv;
 	   }
 	}
-@Autowired
-    Suplierdao sdao;
-public void Suplierdao(Suplierdao sdao)
-{
-   this.sdao=sdao;	
-}
+
 @RequestMapping(value="/success2",method=RequestMethod.GET)
 public ModelAndView success2(HttpServletRequest request)
 
@@ -124,13 +137,9 @@ public ModelAndView success2(HttpServletRequest request)
   {
 	return mv;
   }
+   
 }
-@Autowired
-Categorydao cdao;
-public void Categorydao(Categorydao cdao)
-{
-   this.cdao=cdao;	
-}
+
 
 @RequestMapping(value="/success1",method=RequestMethod.GET)
 public ModelAndView success1(HttpServletRequest request)
@@ -165,7 +174,7 @@ public ModelAndView success1(HttpServletRequest request)
   {
 	return mv;
   }
-   
+  
 }
 	
 	@RequestMapping(value="/admin",method=RequestMethod.GET)
@@ -187,10 +196,16 @@ public ModelAndView success1(HttpServletRequest request)
 	{
 		System.out.println("inside Category controller");
 		return "categoryadd";
+	}
+  @RequestMapping(value="/ProductDetails",method=RequestMethod.GET)
+  public String productdetails()
+  {
+	  System.out.println("inside product details");
+	  return "ProductDetails";
+	  
+  }
 
-
-
-} 
+ 
 
 	@Autowired
 	Productdao pdao;
@@ -215,6 +230,7 @@ public ModelAndView success1(HttpServletRequest request)
        String Pdesc=request.getParameter("Pdesc");
      /*  String Pprice=request.getParameter("Pprice");*/
        int Pprice=Integer.parseInt(request.getParameter("Pprice"));
+       String stock=request.getParameter("stock");
        System.out.println("hello"+Pid+" "+Pname+" "+Pbrand+" "+Pdesc+" "+Pprice);
 		Product p=new Product();
 		
@@ -223,6 +239,7 @@ public ModelAndView success1(HttpServletRequest request)
 		p.setP_brand(Pbrand);
 		p.setP_description(Pdesc);
 		p.setP_price(Pprice);
+		p.setStock(stock);
 		pdao.persist(p);
 		
 		System.out.println("Mother Earth");
@@ -245,10 +262,19 @@ public ModelAndView success1(HttpServletRequest request)
        
    
 	@RequestMapping(value="/productadd",method=RequestMethod.GET)
-	public String Productadd()
+	public ModelAndView Productadd()
 	{
 		System.out.println("inside productadd controller");
-		return "productadd";
+		List<Suplier> slist=sdao.getAllSupliers();
+		   List<Category> clist=cdao.getAllCategories();
+		ModelAndView m = new ModelAndView("productadd");
+		m.addObject("slist", slist);
+		m.addObject("clist", clist);
+      
+		return m;
+		
+	    
+		//return "productadd";
 } 
 
 	

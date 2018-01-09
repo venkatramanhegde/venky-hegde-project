@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    xmlns:th="http://www.thymeleaf.org">
+		<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -110,6 +112,42 @@ span.psw {
 
 <label><b>Product price</b></label>
     <input type="text" placeholder="Enter Product price" name="Pprice" required="required">
+    <label><b>Product stock</b></label>
+    <input type="text" placeholder="Enter Product stock" name="stock" required="required">
+     <div class="form-group">
+  <label class="col-md-4 control-label" for="pCategory" >Select Category</label>
+  <div class="col-md-4">
+    <select id="pCategory" class="form-control" name="pCategory">
+      <c:forEach var="clist" items="${clist}">
+
+                <option value="${clist.c_id}">${clist.c_name}</option>
+
+            </c:forEach>
+    </select>
+  </div>
+</div>
+<br/>
+<br/>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="s_id" >Select Supplier</label>
+  <div class="col-md-4">
+    <select id="sid" class="form-control" name="pSupplier">
+       <c:forEach var="slist" items="${slist}">
+
+                <option value="${slist.s_id}">${slist.s_name}</option>
+                
+                  </c:forEach>
+                    </select>
+  </div>
+</div>
+<br/>
+<br/>
+                  
+                
+    <div class="form-group">
+      <label for="img">Upload Image:</label>
+      <input type="file" id="img" name="file">
+    </div>
 
 <button type="submit">Submit</button>
 

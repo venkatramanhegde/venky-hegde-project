@@ -51,7 +51,7 @@ xmlns:th="http://www.thymeleaf.org">
                    <tr>
                        <th><em class="fa fa-cog"></em></th>
                        <th class="hidden-xs">ID</th>
-                                                                                                                  
+                        <th>  name </th>                                                                                         
                    </tr> 
                  </thead>
                  <tbody>

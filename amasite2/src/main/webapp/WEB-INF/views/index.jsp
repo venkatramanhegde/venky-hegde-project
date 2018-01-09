@@ -165,21 +165,22 @@ img {vertical-align: middle;}
       <li class="active"><a href="#">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category choice <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="Prodcutlist">Productlist</a></li>
-          <li><a href="categorylist">categorylist</a></li>
-          <li><a href="Suplierlist">Suplierlist</a></li>
-          <!--  <li><a href="#">Apple</a></li> -->
+          <c:forEach var="clist" items="${clist}">
+
+                <option value="${clist.c_id}">${clist.c_name}</option>
+
+            </c:forEach>
         </ul>
       </li>
       <li><a href="admin">Admin</a></li>
       <li><a href="register">Register</a></li>
     </ul>
-    <!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
-        <ul class="dropdown-menu"> -->
-         <!--  <li><a href="#">Category List</a></li>
+     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">product list try</a>
+        <ul class="dropdown-menu">
+          <li><a href="ProductDetails">ProductDetails</a></li>
           <li><a href="#">Suplier List</a></li>
           <li><a href="#">Product List</a></li>
-           <li><a href="#">Apple</a></li> -->
+           <li><a href="#">Apple</a></li>
   </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

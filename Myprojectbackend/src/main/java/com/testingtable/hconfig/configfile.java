@@ -38,7 +38,7 @@ public class configfile
 	        sessionBuilder.addAnnotatedClass(Suplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
 	        //sessionBuilder.addAnnotatedClass(Orders.class);
-	       sessionBuilder.addAnnotatedClass(cart.class);
+	      //   sessionBuilder.addAnnotatedClass(cart.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired
@@ -59,7 +59,7 @@ public class configfile
 	        properties.put("hibernate.show_sql", "true");
 	        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 	        properties.put("hibernate.format_sql", "true");
-	        properties.put("hibernate.hbm2ddl.auto", "create");
+	        properties.put("hibernate.hbm2ddl.auto", "update");
 	        properties.put("hibernate.connection.autocommit", true);
 	        return properties;
 	    }

@@ -27,6 +27,9 @@ public class Product implements Serializable {
 	private String p_description;
 	@Column(name="price")
 	private int p_price;
+	@Column(name="stock")
+	private String stock;
+	
 	//@Column(name="quantity") private int p_quantity;
 	@ManyToOne
 	@JoinColumn(name="C_ID")
@@ -40,7 +43,7 @@ public class Product implements Serializable {
 		super();
 	}
 
-	public Product(int p_id,String p_name, String p_brand,String p_description, int p_price, int p_quantity,
+	public Product(int p_id,String p_name, String p_brand,String p_description, int p_price,String stock,
 			Category category, Suplier suplier, String p_image) {
 		super();
 		this.p_id = p_id;
@@ -48,7 +51,7 @@ public class Product implements Serializable {
 		this.p_name = p_name;
 		this.p_description = p_description;
 		this.p_price = p_price;
-		//this.p_quantity = p_quantity;
+		this.stock =stock;
 		this.category = category;
 		this.suplier = suplier;
 		this.p_image = p_image;
@@ -57,6 +60,14 @@ public class Product implements Serializable {
 	public int getP_id() {
 		return p_id;
 	}
+	public String getStock() {
+		return stock;
+	}
+
+	public void setStock(String stock) {
+		this.stock = stock;
+	}
+
 	public void setP_id(int p_id) {
 		this.p_id = p_id;
 	}
