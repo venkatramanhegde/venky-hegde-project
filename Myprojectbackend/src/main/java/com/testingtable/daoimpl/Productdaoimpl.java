@@ -73,16 +73,16 @@ public class Productdaoimpl implements Productdao {
 	public void deleteAll() {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
-	public List<Product> getFilterProducts(int C_ID) {
+	public List<Product> getFilterProducts(int c_id) {
 		// TODO Auto-generated method stub
         Session s=sessionFactory.openSession();
-		List<Product> results =s.createQuery("from Product where c_id="+C_ID).list();
+		List<Product> results =s.createQuery("from Product where c_id="+ c_id).list();
 		s.close();
 		return results;
 	}
-	*/
+	
 		
 		
 }

@@ -1,5 +1,6 @@
 package com.site.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -57,12 +58,15 @@ public void Categorydao(Categorydao cdao)
 		return m;
 	}
 
-	@RequestMapping(value="/register",method=RequestMethod.GET)
-	public String signin1()
-	{
-		System.out.println("inside controller"); 
-		return "register";
-	}
+	
+
+@RequestMapping(value="/index",method=RequestMethod.GET)
+public String Suplieradd1()
+{
+	System.out.println("inside controller");
+	return "index";
+}
+
 
 	
 	
@@ -197,15 +201,18 @@ public ModelAndView success1(HttpServletRequest request)
 		System.out.println("inside Category controller");
 		return "categoryadd";
 	}
-  @RequestMapping(value="/ProductDetails",method=RequestMethod.GET)
-  public String productdetails()
+ /* @RequestMapping(value="/productdetailslist",method=RequestMethod.GET)
+  public String productdetails(HttpServletRequest request)
   {
+	  String cid=request.getParameter("cid");
+	  List<Category> list= pdao.getAllCategories();
+ 
 	  System.out.println("inside product details");
-	  return "ProductDetails";
+ 	  return "productdetailslist";
 	  
   }
 
- 
+ */
 
 	@Autowired
 	Productdao pdao;
@@ -231,15 +238,23 @@ public ModelAndView success1(HttpServletRequest request)
      /*  String Pprice=request.getParameter("Pprice");*/
        int Pprice=Integer.parseInt(request.getParameter("Pprice"));
        String stock=request.getParameter("stock");
-       System.out.println("hello"+Pid+" "+Pname+" "+Pbrand+" "+Pdesc+" "+Pprice);
+      
 		Product p=new Product();
-		
+       System.out.println("hello"+Pid+" "+Pname+" "+Pbrand+" "+Pdesc+" "+Pprice  );
+       		
+		//Product p=new Product();
+	/*	Category c=category.findByName(c_name);
+		Supplier s=supplierDao.findByName(s_name);
+		*/
 		p.setP_id(Pid);
 		p.setP_name(Pname);
 		p.setP_brand(Pbrand);
 		p.setP_description(Pdesc);
 		p.setP_price(Pprice);
-		p.setStock(stock);
+	    p.setStock(stock);
+	    
+	    p.setCategory(cdao.findById(Integer.parseInt(request.getParameter("pCategory").toString())));
+		p.setSuplier(sdao.findById(Integer.parseInt(request.getParameter("pSuplier").toString())));
 		
 		pdao.persist(p);
 		
@@ -277,8 +292,24 @@ public ModelAndView success1(HttpServletRequest request)
 	    
 		//return "productadd";
 } 
-
-	
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String login()
+	{
+		System.out.println("inside Category controller");
+		return "login";
+	}
+	 @RequestMapping(value="/productdetails",method=RequestMethod.GET)
+		public String productdetails1()
+		{
+			System.out.println("inside productdetails controller");
+			return "productdetails";
+		}
+	 @RequestMapping(value="/checkout",method=RequestMethod.GET)
+		public String checkout()
+		{
+			System.out.println("inside productdetails controller");
+			return "checkout";
+		}
+		
 }
-	
 

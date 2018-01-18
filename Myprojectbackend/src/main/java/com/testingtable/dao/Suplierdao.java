@@ -7,10 +7,11 @@ import com.testingtable.model.Suplier;
 public interface Suplierdao {
 	 public void persist(Suplier s);
 	 public List<Suplier> getAllSupliers();
+	 public Suplier  findById(int id);
+		
 		
 	/*	public void update(Supplier s);
 		
-		public Supplier  findById(int id);
 		
 		public void delete(Supplier s);
 		

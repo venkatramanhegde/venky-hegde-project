@@ -21,7 +21,11 @@ xmlns:th="http://www.thymeleaf.org">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+<script>
+console.log("%^^^^^^^^^");
+console.log("kk  ${hi}");
+console.log("${list}");
+</script>
 </head>
 
 <body style="background-color:Aquamarine">
@@ -30,7 +34,7 @@ xmlns:th="http://www.thymeleaf.org">
    <div class="row">
    
    <p></p>
-	<h1>Product Table</h1>
+	<h1>Product list  Table</h1>
 	<p> </p><p> </p>
 	
 <div class="col-md-10 col-md-offset-1">
@@ -50,40 +54,38 @@ xmlns:th="http://www.thymeleaf.org">
                  <thead>
                    <tr>
                        <th><em class="fa fa-cog"></em></th>
-                       <th class="hidden-xs">ID</th>
-                       <th>Name</th>
-                       <th> Brand </th>
-                       <th> description</th>
-                       <th>  price </th>    
-                       <th> stock </th>
-                       <th> image </th>   
-                       <th> category name </th>  
-                       <th> supplier name </th>                                                                                    
+                       <th> SL.No.</th>
+                       <th class="hidden-xs">ProductID</th>
+                     <th>Product Name </th>
+                      <th> Product Supplier</th>
+                       <th>product Category  </th>
+                       <th> Description </th>
+                       <th> Price </th>
+                       <th> Stock </th>
+                       <th> Image </th>  
+                       <th> Action </th>                                                                                      
                    </tr> 
                  </thead>
                  <tbody>
                          
-                         <c:forEach items="${list }" var="p">
+                         <c:forEach items="${list }" var="p"><%--  varStatus="st" items="${prodlist }"> --%>
                          <tr>
                          <td>
                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                            </td>
+                        <%--    <td> ${st.count}</td> --%>
                            <td class="hiden-xs">${p.p_id }</td>
-                           <td>${p.p_name }</td>
-                           <td>${p.p_brand}</td>
-                           <td>${p.p_description} </td>
-                           <td>${p.p_price} </td>
-                           <td> ${p.stock} </td>
-                            <td>${p.category.c_name}</td>     
-                           <td>${p.suplier.s_name}</td>     
-                            <%-- <td>${p.image} </td>
-                      <td>${p. p_price}</td> 
+                              <td>${p.p_name }</td>
+                             <td>${p.supplier.s_name}</td>      
                            <td>${p.category.c_name}</td>     
-                           <td>${p.supplier.s_name}</td>         
-                             --%>
-                         <%--   <td><img src=""src/main/webapp/images/lenovoslim.jpg"/${p.pImg}"  class="img-rounded" alt="${p.p_name }" width="75px" height="50px"/></td> --%>         
-                             
+                            <td>${p.p_description}  </td>
+                            <td>${p.p_price} </td>
+                            <td>${p_stock }  </td>
+                                                        
+                            
+                           <%-- <td><img src=""src/main/webapp/images/lenovoslim.jpg"/${p.pImg}"  class="img-rounded" alt="${p.p_image }" width="75px" height="50px"/></td>      --%>    
+                         <td> <a class="btn btn-default" role="button" href="#">DETAILS</a></td>
                            </tr>  
                                  
                    <tr>   </c:forEach>  

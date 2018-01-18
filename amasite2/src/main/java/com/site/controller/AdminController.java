@@ -1,7 +1,10 @@
 package com.site.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,6 +57,7 @@ this.sdao=sdao;
 	     return m;
 			}
 	
+	
 	@Autowired
 	Productdao pdao;
 	public void Productdao(Productdao pdao)
@@ -91,6 +95,36 @@ this.sdao=sdao;
 			System.out.println("inside controller");
 			return "Suplierlist";
 		}
+/*
+		 @RequestMapping(value="/admin/productdetailslist",method=RequestMethod.GET)
+		  public String productdetails(HttpServletRequest request)
+		  {
+			  String cid=request.getParameter("cid");
+			  List<Category> list= pdao.getAllCategories();
+			 public List<Product> getFilterProducts(int c_id);
+			  System.out.println("inside product details");
+		 	  return "productdetailslist";
+			  
+		  }*/
+		 @RequestMapping("Productdetailslist")
+			public ModelAndView adding4(HttpServletRequest request){
+			  System.out.println("inside product details1111111111111111111111111111111111111111");
+				 String cid=request.getParameter("cid");
+				  System.out.println(cid);
+				 int id=Integer.parseInt(cid);
+				  System.out.println("inside product details1222222222222222222222222222222222222222");
+			List<Product> list= pdao.getFilterProducts(id);
+			  System.out.println("inside product details123333333333333333333333333333333333");
+				ModelAndView m = new ModelAndView("Productdetailslist");
+				m.addObject("list", list);
+			m.addObject("hi");
+				  System.out.println("inside product details12444444444444444444444444444");
+			 	  return m;
+				  
+			  
 
+			}
+		
 
+		 
 }

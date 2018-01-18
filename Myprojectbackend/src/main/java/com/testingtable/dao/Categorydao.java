@@ -9,14 +9,14 @@ public interface Categorydao {
 	public List<Category> getAllCategories();
 	 public void persist(Category c);
 		
-		/*     public void update(Category c);
+		     public void update(Category c);
 		
 		public Category  findById(int id);
 		
 		public void delete(Category c);
 		
-		public List<Category> getAllCategories();
+	//	public List<Category> getAllCategories();
 		
 		public void deleteAll();
-	*/
+	
 }

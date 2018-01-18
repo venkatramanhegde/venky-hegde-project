@@ -46,32 +46,32 @@ public class Suplierdaoimpl implements Suplierdao{
 		
 		
 		
-	}
+	
 
 
-	/*public void update(Supplier s) {
+	public void update(Suplier s) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public Supplier findById(int id) {
-		Supplier s=(Supplier)sessionFactory.openSession().get(Supplier.class, id);
+	public Suplier findById(int id) {
+		Suplier s=(Suplier)sessionFactory.openSession().get(Suplier.class, id);
 		// TODO Auto-generated method stub
-		return s;
+		return  s;
 	}
 
-	public void delete(Supplier s) {
+	public void delete(Suplier s) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public List<Supplier> getAllSuppliers() {
+	public List<Suplier> getAllSupliers1() {
 		// TODO Auto-generated method stub
 		
 		Session sf =sessionFactory.openSession();
 		sf.beginTransaction();
 		Query query = sf.createQuery("from Supplier");
-		List<Supplier> list1=query.list();
+		List<Suplier> list1=query.list();
 		System.out.println(list1);
 		sf.getTransaction().commit();
 			return list1;
@@ -89,4 +89,3 @@ public class Suplierdaoimpl implements Suplierdao{
 
 
 
-*/

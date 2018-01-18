@@ -107,10 +107,10 @@ public class Product implements Serializable {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	public Suplier getSupplier() {
+	public Suplier getSuplier() {
 		return suplier;
 	}
-	public void setSupplier(Suplier suplier) {
+	public void setSuplier(Suplier suplier) {
 		this.suplier = suplier;
 	}
 	public String getP_image() {

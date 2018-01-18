@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1> Welcome to error page</h1>
- <h3> Go Back to Home Page or <a href="goTologin">login</a>page</h3>
- 
+
 </body>
 </html>

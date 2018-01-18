@@ -19,7 +19,7 @@ public List<Product> getAllProducts();
 	
 	
 	public void deleteAll();
-   
-    public List<Product> getFilterProducts(int C_ID);*/
+   */
+    public List<Product> getFilterProducts(int  c_id);
     
 }

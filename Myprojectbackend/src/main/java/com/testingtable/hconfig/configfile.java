@@ -13,7 +13,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.testingtable.model.Cart;
 import com.testingtable.model.Category;
+import com.testingtable.model.Order;
 import com.testingtable.model.Product;
 import com.testingtable.model.Suplier;
 import com.testingtable.model.User;
@@ -37,8 +39,8 @@ public class configfile
 	        sessionBuilder.addAnnotatedClass(Category.class);
 	        sessionBuilder.addAnnotatedClass(Suplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
-	        //sessionBuilder.addAnnotatedClass(Orders.class);
-	      //   sessionBuilder.addAnnotatedClass(cart.class);
+	        sessionBuilder.addAnnotatedClass(Order.class);
+	         sessionBuilder.addAnnotatedClass(Cart.class);
 	        return sessionBuilder.buildSessionFactory();
 	    }
 	    @Autowired

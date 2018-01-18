@@ -131,11 +131,11 @@ span.psw {
 <div class="form-group">
   <label class="col-md-4 control-label" for="s_id" >Select Supplier</label>
   <div class="col-md-4">
-    <select id="sid" class="form-control" name="pSupplier">
+    <select id="sid" class="form-control" name="pSuplier">
        <c:forEach var="slist" items="${slist}">
 
                 <option value="${slist.s_id}">${slist.s_name}</option>
-                
+                 
                   </c:forEach>
                     </select>
   </div>

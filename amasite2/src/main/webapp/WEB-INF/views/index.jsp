@@ -163,28 +163,29 @@ img {vertical-align: middle;}
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category choice <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category choice <span class="caret"></sp2an></a>
+        <ul class="dropdown-menu">   
           <c:forEach var="clist" items="${clist}">
 
-                <option value="${clist.c_id}">${clist.c_name}</option>
+               <a href="Productdetailslist?cid=${clist.c_id}"> <option value="${clist.c_id}">${clist.c_name}</option> </a>
 
             </c:forEach>
         </ul>
       </li>
       <li><a href="admin">Admin</a></li>
       <li><a href="register">Register</a></li>
+      <li><a href="productdetails">carting</a></li>
     </ul>
-     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">product list try</a>
+   <!--   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">product list try</a>
         <ul class="dropdown-menu">
-          <li><a href="ProductDetails">ProductDetails</a></li>
+          <li><a href="">#</a></li>
           <li><a href="#">Suplier List</a></li>
           <li><a href="#">Product List</a></li>
            <li><a href="#">Apple</a></li>
-  </ul>
+  </ul> -->
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     <!--  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     
   </div>
 </nav>
@@ -219,6 +220,9 @@ img {vertical-align: middle;}
 </div>
  -->
 <script>
+function gotoProductDetails(x){
+	top.Content.location.href='/myprojectfrontend/productdetails?pid='+x;
+}
 var slideIndex = 0;
 showSlides();
 

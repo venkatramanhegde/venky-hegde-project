@@ -47,8 +47,8 @@ public void persist(Category c)
 	}
 
 	// TODO Auto-generated method stub
-		}
-/*
+		
+
 public void update(Category c) {
 	// TODO Auto-generated method stub
 	
@@ -64,13 +64,13 @@ public void delete(Category c) {
 	// TODO Auto-generated method stub
 	
 }
+}
 
-
-
+/*
 public void deleteAll() {
 	// TODO Auto-generated method stub
 	
-}
 
-*/
+}*/
+
 
